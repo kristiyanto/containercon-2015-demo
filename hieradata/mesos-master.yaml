@@ -1,0 +1,14 @@
+---
+classes:
+  - role::mesos::master
+
+# Mesos configuration
+profile::mesos::master::listen_address: '192.168.248.10'
+profile::mesos::master::options:
+  log_dir: '/var/log/mesos'
+  quorum: '1'
+profile::mesos::master::work_dir: '/var/lib/mesos'
+
+# ZooKeeper configuration
+profile::zookeeper::id: 1
+profile::zookeeper::listen_ip: '192.168.248.10'

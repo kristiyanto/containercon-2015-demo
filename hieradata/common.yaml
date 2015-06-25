@@ -1,0 +1,12 @@
+---
+# This Hiera data will be available to all nodes, but only applied if a
+# class (e.g. role, profile) actually uses it, and only if a node doesn't
+# override a key higher up in the hierarchy (see hiera.yaml).
+
+# Ensure we use the same version and ZK URL for Mesos on all nodes
+profile::mesos::common::version: '0.22.1'
+profile::mesos::common::zookeeper: 'zk://192.168.248.10:2181/mesos'
+
+# Ensure the following Docker images are staged on the Mesos slaves.
+profile::docker::images:
+  - 'rogerignazio/basic-puppet-example'

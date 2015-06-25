@@ -1,0 +1,8 @@
+.DS_Store
+*~
+*.lock
+*.swp
+.bundle/
+.tmp/
+.vagrant/
+vendor/
