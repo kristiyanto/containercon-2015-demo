@@ -68,5 +68,5 @@ you may use Vagrant to bring up just the `mesos-master` machine, and then one
 or more `mesos-slave-N` machines._
 
 Mesos will now be available at <http://192.168.248.10:5050> and Chronos will
-be available at <http://192.168.248.10:8080>. If all is well, a Chronos job
+be available at <http://192.168.248.10:4400>. If all is well, a Chronos job
 named "query_mesos" will have been created and be visible in the Chronos UI.
