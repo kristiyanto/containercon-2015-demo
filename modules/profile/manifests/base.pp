@@ -2,7 +2,7 @@
 # Base resources that should be present on every node
 #
 class profile::base {
-  package { ['git', 'vim-minimal']:
+  package { ['git', 'ruby', 'ruby-devel', 'vim-enhanced']:
     ensure => present,
   }
 
