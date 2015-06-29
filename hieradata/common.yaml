@@ -4,7 +4,7 @@
 # override a key higher up in the hierarchy (see hiera.yaml).
 
 # Ensure we use the same version and ZK URL for Mesos on all nodes
-profile::mesos::common::version: '0.22.1'
+profile::mesos::common::version: '0.22.1-1.0.centos701406'
 profile::mesos::common::zookeeper: 'zk://192.168.248.10:2181/mesos'
 
 # Ensure the following Docker images are staged on the Mesos slaves.
