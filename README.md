@@ -47,7 +47,7 @@ This demo was developed and tested using
 Install the required Ruby gems
 
 ```
-$ bundle install --path vendor/gems
+$ bundle install
 ```
 
 Download the Puppet modules required to provision the Razor server
