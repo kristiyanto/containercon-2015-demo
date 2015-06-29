@@ -5,6 +5,7 @@ classes:
 # Mesos configuration
 profile::mesos::master::listen_address: '192.168.248.10'
 profile::mesos::master::options:
+  hostname: '192.168.248.10'
   log_dir: '/var/log/mesos'
   quorum: '1'
 profile::mesos::master::work_dir: '/var/lib/mesos'
