@@ -2,5 +2,6 @@
 # Manage Chronos installation, configuration, and jobs
 #
 class profile::chronos {
-  notify { 'profile::chronos is currently a noop': }
+  Class['profile::mesos::master'] -> Class['chronos']
+  include ::chronos
 }
