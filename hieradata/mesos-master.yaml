@@ -13,3 +13,18 @@ profile::mesos::master::work_dir: '/var/lib/mesos'
 # ZooKeeper configuration
 profile::zookeeper::id: 1
 profile::zookeeper::listen_ip: '192.168.248.10'
+
+# Chronos config
+profile::chronos::hostname: '192.168.248.10'
+
+# Chronos jobs
+profile::chronos::jobs:
+  'query_mesos':
+    command: 'query_mesos 192.168.248.10'
+    job_schedule: 'R/2015-06-29T00:00:00.000Z/PT60s'
+    container:
+      type: 'DOCKER'
+      image: 'rogerignazio/basic-puppet-example'
+    cpus: 1.0
+    mem: 256
+    owner: 'roger@puppetlabs.com'

@@ -6,6 +6,12 @@ class profile::base {
     ensure => present,
   }
 
+  package { ['httparty', 'json']:
+    ensure   => present,
+    provider => gem,
+    require  => Package['ruby-devel'],
+  }
+
   # For the purposes of this demo, disable the firewall
   service { 'firewalld':
     ensure => stopped,
