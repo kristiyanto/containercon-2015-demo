@@ -7,22 +7,12 @@ Vagrant.configure(2) do |config|
     c.vm.network 'private_network', :ip => '192.168.248.10'
   end
 
-  # Mesos slave 1
-  config.vm.define 'mesos-slave-1' do |c|
-    c.vm.host_name = 'mesos-slave-1'
-    c.vm.network 'private_network', :ip => '192.168.248.11'
-  end
-
-  # Mesos slave 2
-  config.vm.define 'mesos-slave-2' do |c|
-    c.vm.host_name = 'mesos-slave-2'
-    c.vm.network 'private_network', :ip => '192.168.248.12'
-  end
-
-  # Mesos slave 3
-  config.vm.define 'mesos-slave-3' do |c|
-    c.vm.host_name = 'mesos-slave-3'
-    c.vm.network 'private_network', :ip => '192.168.248.13'
+  # Mesos slaves
+  (1..3).each do |i|
+    config.vm.define "mesos-slave-#{i}" do |c|
+      c.vm.host_name = "mesos-slave-#{i}"
+      c.vm.network 'private_network', :ip => "192.168.248.1#{i}"
+    end
   end
 
   # Provision everything with Puppet
