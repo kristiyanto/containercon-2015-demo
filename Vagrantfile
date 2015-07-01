@@ -15,13 +15,14 @@ Vagrant.configure(2) do |config|
     end
   end
 
-  # Provision everything with Puppet
-  config.vm.provision :puppet do |pp|
-    pp.options        = '--hiera_config /vagrant/hiera.yaml --parser future'
-    pp.manifests_path = 'manifests'
-    pp.module_path    = ['modules', 'vendor/modules']
-    pp.manifest_file  = 'base.pp'
-  end
+  # Puppet will return a non-zero exit code if there's a problem with the run,
+  # which includes the possibility that the chronos_job provider isn't
+  # available on the first run (because Puppet also manages the httparty gem).
+  #
+  # To work around this, we call a provision script that always exits 0. This
+  # isn't entirely necessary, but is a nice-to-have so that a simple
+  # `vagrant up` provisions the entire demo environment in one shot.
+  config.vm.provision :shell, inline: '/vagrant/scripts/provision.sh'
 
   # Ensure everything has at least 1 GB RAM, across the three common providers
   config.vm.provider 'virtualbox' do |v|
