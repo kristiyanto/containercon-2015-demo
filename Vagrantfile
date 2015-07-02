@@ -1,6 +1,16 @@
 Vagrant.configure(2) do |config|
   config.vm.box = 'puppetlabs/centos-7.0-64-puppet'
 
+  # This isn't mentioned in the README, but if the vagrant-cachier
+  # plugin is installed, we should make use of it.
+  if Vagrant.has_plugin?('vagrant-cachier')
+    config.cache.scope = :box
+    config.cache.synced_folder_opts = {
+      type: :nfs,
+      mount_options: ['rw', 'vers=3', 'tcp', 'nolock']
+    }
+  end
+
   # Mesos master
   config.vm.define 'mesos-master' do |c|
     c.vm.host_name = 'mesos-master'
