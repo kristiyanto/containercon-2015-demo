@@ -50,7 +50,7 @@ Install the required Ruby gems
 $ bundle install
 ```
 
-Download the Puppet modules required to provision the Razor server
+Download the Puppet modules
 
 ```
 $ bundle exec librarian-puppet install
@@ -64,7 +64,7 @@ $ vagrant up --provider virtualbox
 
 _Note: each of the VMs are assigned 1 CPU core and 1 GB memory, so you should
 have (at a minimum) 2 CPUs and 4 GB memory to run the full demo. Alternately,
-you may use Vagrant to bring up just the `mesos-master` machine, and then one
+you may have Vagrant bring up just the `mesos-master` machine, and then one
 or more `mesos-slave-N` machines._
 
 Mesos will now be available at <http://192.168.248.10:5050> and Chronos will
