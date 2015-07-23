@@ -70,3 +70,11 @@ or more `mesos-slave-N` machines._
 Mesos will now be available at <http://192.168.248.10:5050> and Chronos will
 be available at <http://192.168.248.10:4400>. If all is well, a Chronos job
 named "query_mesos" will have been created and be visible in the Chronos UI.
+
+If the Chronos job _wasn't_ created, it's possible that Puppet attempted to
+apply the `chronos_job` resource before all the dependent resources were
+applied. If this is the case, simply run the Puppet provisioner once more:
+
+```
+$ vagrant provision mesos-master
+```
