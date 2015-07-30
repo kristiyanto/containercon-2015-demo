@@ -1,12 +1,12 @@
 # ContainerCon 2015 Demo
-This repository contains demo materials for my ContainerCon 2015 talk
+This repository contains demo materials for the ContainerCon 2015 talk
 [Managing Mesos, Docker, and Chronos with Puppet](http://sched.co/3XpF),
-co-presented with [Michael Hausenblas](http://mhausenblas.info/).
+co-presented with [Niklas Quarfot Nielsen](https://twitter.com/quarfot).
 
 ## Abstract
 A solid configuration management solution is key to any well-run,
 well-documented environment. Fortunately, Puppet can do more than just
-host-bound configuration. In this presentation, Roger and Michael will
+host-bound configuration. In this presentation, Roger and Niklas will
 demonstrate how to build Docker images, deploy Apache Mesos clusters, and
 create scheduled jobs in Chronos, all without leaving the Puppet DSL.
 
