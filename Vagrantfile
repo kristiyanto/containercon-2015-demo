@@ -1,5 +1,6 @@
 Vagrant.configure(2) do |config|
-  config.vm.box = 'puppetlabs/centos-7.0-64-puppet'
+  config.vm.box         = 'puppetlabs/centos-7.0-64-puppet'
+  config.vm.box_version = '= 1.0.1'
 
   # This isn't mentioned in the README, but if the vagrant-cachier
   # plugin is installed, we should make use of it.
